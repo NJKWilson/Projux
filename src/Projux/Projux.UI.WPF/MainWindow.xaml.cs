@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using Microsoft.Extensions.DependencyInjection;
+using Projux.UI.Core.Data;
+using Projux.UI.Core;
 
 namespace Projux.UI.WPF
 {
@@ -23,6 +13,12 @@ namespace Projux.UI.WPF
         public MainWindow()
         {
             InitializeComponent();
+
+            var serviceCollection = new ServiceCollection();
+            serviceCollection.AddWpfBlazorWebView();
+            serviceCollection.AddProjuxCore();
+            serviceCollection.AddSingleton<WeatherForecastService>();
+            Resources.Add("services", serviceCollection.BuildServiceProvider());
         }
     }
 }
