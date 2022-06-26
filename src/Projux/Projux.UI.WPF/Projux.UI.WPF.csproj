@@ -9,14 +9,26 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="6.0.400" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Projux.UI.Core\Projux.UI.Core.csproj" />
+    <PackageReference Include="MudBlazor" Version="6.0.10" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Properties\" />
+    <Folder Include="Services\Adapter\" />
+    <Folder Include="Services\Foundation\" />
+    <Folder Include="Services\Higher\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\index.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\MudBlazor.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\MudBlazor.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
