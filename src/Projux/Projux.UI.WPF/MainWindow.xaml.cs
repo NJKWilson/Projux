@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
-using Projux.UI.Core.Data;
 using Projux.UI.Core;
+using Projux.UI.WPF.Data;
 
 namespace Projux.UI.WPF
 {
