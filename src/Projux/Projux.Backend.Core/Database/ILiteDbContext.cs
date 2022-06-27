@@ -1,4 +1,5 @@
 ﻿using LiteDB;
+
 namespace Projux.Backend.Core.Database
 {
     public interface ILiteDbContext
