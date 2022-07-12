@@ -35,7 +35,7 @@ public class CustomerContactServiceTests
     [Fact]
     public void Insert_RandomCustomer_ShouldReturnVailidObjectId()
     {
-        var customerContact = new Database.Entities.CustomerContact
+        var customerContact = new Database.Entities.CustomerContactEntity
         {
             FirstName = ObjectId.NewObjectId().ToString(),
             LastName = ObjectId.NewObjectId().ToString(),
@@ -50,7 +50,7 @@ public class CustomerContactServiceTests
     [Fact]
     public void Insert_TwoSameIdo_ShouldDoSomething()
     {
-        var customerContact = new Database.Entities.CustomerContact
+        var customerContact = new Database.Entities.CustomerContactEntity
         {
             Id = ObjectId.NewObjectId(),
             FirstName = ObjectId.NewObjectId().ToString(),

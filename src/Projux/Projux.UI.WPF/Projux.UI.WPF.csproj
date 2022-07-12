@@ -14,9 +14,6 @@
 
   <ItemGroup>
     <Folder Include="Properties\" />
-    <Folder Include="Services\Adapter\" />
-    <Folder Include="Services\Foundation\" />
-    <Folder Include="Services\Higher\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,9 +1,9 @@
-﻿namespace Projux.Backend.Core.BasicServices.CustomerContact;
-
-using LiteDB;
+﻿using LiteDB;
 using Projux.Backend.Core.BasicServices.CustomerContact.Exceptions;
 using Projux.Backend.Core.Database;
 using Projux.Backend.Core.Database.Entities;
+
+namespace Projux.Backend.Core.BasicServices.CustomerContact;
 
 public class CustomerContactService : ICustomerContactService
 {
@@ -14,28 +14,23 @@ public class CustomerContactService : ICustomerContactService
         _liteDb = liteDbContext.Database;
     }
 
-    private ILiteCollection<CustomerContact> GetCollection()
-    {
-        return _liteDb.GetCollection<CustomerContact>("CustomerContact");
-    }
-
     public bool Delete(ObjectId id)
     {
         return GetCollection().Delete(id);
     }
 
-    public IEnumerable<CustomerContact> FindAll()
+    public IEnumerable<CustomerContactEntity> FindAll()
     {
         return GetCollection().FindAll();
     }
 
-    public CustomerContact FindById(ObjectId id)
+    public CustomerContactEntity FindById(ObjectId id)
     {
         // Validate input
         if (id == ObjectId.Empty)
             throw new CustomerContactServiceValidationException("Id cannot be empty");
 
-        CustomerContact customer;
+        CustomerContactEntity customer;
 
         // Try to get the customer from the database
         try
@@ -56,7 +51,7 @@ public class CustomerContactService : ICustomerContactService
         //return GetCollection().Find(x => x.Id == id).FirstOrDefault();
     }
 
-    public ObjectId Insert(CustomerContact customerContact)
+    public ObjectId Insert(CustomerContactEntity customerContact)
     {
         // Validate input
         if (string.IsNullOrEmpty(customerContact.FirstName))
@@ -87,8 +82,13 @@ public class CustomerContactService : ICustomerContactService
         return result;
     }
 
-    public bool Update(CustomerContact customerContact)
+    public bool Update(CustomerContactEntity customerContact)
     {
         return GetCollection().Update(customerContact);
+    }
+
+    private ILiteCollection<CustomerContactEntity> GetCollection()
+    {
+        return _liteDb.GetCollection<CustomerContactEntity>("CustomerContact");
     }
 }

@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CoordinationServices\" />
+    <Folder Include="CompexServices\" />
   </ItemGroup>
 
 </Project>

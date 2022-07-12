@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+option csharp_namespace = "Projux.Backend.gRPC";
+
+package customer_contact;
+
+// The greeting service definition.
+service CustomerContact {
+  rpc Insert (InsertRequest) returns (InsertReply);
+  rpc Update (UpdateRequest) returns (UpdateReply);
+  rpc FindById (FindByIdRequest) returns (FindByIdReply);
+  rpc FindAll (FindAllRequest) returns (FindAllReply);
+  rpc DeleteById (DeleteByIdRequest) returns (DeleteByIdReply);
+}
+
+// Insert messages
+message InsertRequest {
+  string name = 1;
+}
+
+message InsertReply {
+  string message = 1;
+}
+
+// Update messages
+message UpdateRequest {
+  string name = 1;
+}
+
+message UpdateReply {
+  string message = 1;
+}
+
+// Find by id messages
+message FindByIdRequest {
+  string name = 1;
+}
+
+message FindByIdReply {
+  string message = 1;
+}
+
+// Find all messages
+message FindAllRequest {
+  string name = 1;
+}
+
+message FindAllReply {
+  string message = 1;
+}
+
+// Delete by id messages
+message DeleteByIdRequest {
+  string name = 1;
+}
+
+message DeleteByIdReply {
+  string message = 1;
+}

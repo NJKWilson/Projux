@@ -2,7 +2,7 @@
 
 using LiteDB;
 
-public class CustomerContact
+public class CustomerContactEntity
 {
     public ObjectId Id { get; set; } = ObjectId.Empty;
     public string FirstName { get; set; } = "";
