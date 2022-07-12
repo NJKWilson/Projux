@@ -2,6 +2,7 @@
 using Projux.Backend.Core.BasicServices.CustomerContact;
 using LiteDB;
 using Projux.Backend.Core.BasicServices.CustomerContact.Exceptions;
+using Projux.Backend.Core.Database.Entities;
 
 namespace Projux.Backend.Core.Tests.BasicServices.CustomerContact;
 
@@ -35,7 +36,7 @@ public class CustomerContactServiceTests
     [Fact]
     public void Insert_RandomCustomer_ShouldReturnVailidObjectId()
     {
-        var customerContact = new Database.Entities.CustomerContactEntity
+        var customerContact = new CustomerContactEntity
         {
             FirstName = ObjectId.NewObjectId().ToString(),
             LastName = ObjectId.NewObjectId().ToString(),
@@ -50,7 +51,7 @@ public class CustomerContactServiceTests
     [Fact]
     public void Insert_TwoSameIdo_ShouldDoSomething()
     {
-        var customerContact = new Database.Entities.CustomerContactEntity
+        var customerContact = new CustomerContactEntity
         {
             Id = ObjectId.NewObjectId(),
             FirstName = ObjectId.NewObjectId().ToString(),
