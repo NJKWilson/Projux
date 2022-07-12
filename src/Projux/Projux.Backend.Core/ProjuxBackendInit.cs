@@ -1,6 +1,7 @@
 ﻿namespace Projux.Backend.Core;
 
 using Microsoft.Extensions.DependencyInjection;
+using Projux.Backend.Core.BasicServices.CustomerContact;
 using Projux.Backend.Core.Database;
 
 public static class ProjuxBackendInit
@@ -12,5 +13,6 @@ public static class ProjuxBackendInit
 
         serviceCollection.AddSingleton(liteDbOptions);
         serviceCollection.AddSingleton<ILiteDbContext, LiteDbContext>();
+        serviceCollection.AddTransient<ICustomerContactService, CustomerContactService>();
     }
 }
