@@ -1,9 +1,8 @@
-﻿using LiteDB;
+﻿namespace Projux.Backend.Core.Database;
 
-namespace Projux.Backend.Core.Database
+using LiteDB;
+
+public interface ILiteDbContext
 {
-    public interface ILiteDbContext
-    {
-        LiteDatabase Database { get; }
-    }
+    LiteDatabase Database { get; }
 }

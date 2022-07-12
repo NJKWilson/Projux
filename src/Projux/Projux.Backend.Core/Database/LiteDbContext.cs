@@ -1,14 +1,13 @@
-﻿using LiteDB;
+﻿namespace Projux.Backend.Core.Database;
 
-namespace Projux.Backend.Core.Database
+using LiteDB;
+
+public class LiteDbContext : ILiteDbContext
 {
-    public class LiteDbContext : ILiteDbContext
-    {
-        public LiteDatabase Database { get; }
+    public LiteDatabase Database { get; }
 
-        public LiteDbContext(LiteDbOptions options)
-        {
-            Database = new LiteDatabase(options.DatabaseLocation);
-        }
+    public LiteDbContext(LiteDbOptions options)
+    {
+        Database = new LiteDatabase(options.DatabaseLocation);
     }
 }

@@ -1,17 +1,16 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿namespace Projux.Backend.Core;
+
+using Microsoft.Extensions.DependencyInjection;
 using Projux.Backend.Core.Database;
 
-namespace Projux.Backend.Core
+public static class ProjuxBackendInit
 {
-    public static class ProjuxBackendInit
+    public static void AddProjuxBackendCore(this IServiceCollection serviceCollection, string dbLocation)
     {
-        public static void AddProjuxBackendCore(this IServiceCollection serviceCollection, string dbLocation)
-        {
-            // Services
-            var liteDbOptions = new LiteDbOptions { DatabaseLocation = dbLocation };
+        // Services
+        var liteDbOptions = new LiteDbOptions { DatabaseLocation = dbLocation };
 
-            serviceCollection.AddSingleton(liteDbOptions);
-            serviceCollection.AddSingleton<ILiteDbContext, LiteDbContext>();
-        }
+        serviceCollection.AddSingleton(liteDbOptions);
+        serviceCollection.AddSingleton<ILiteDbContext, LiteDbContext>();
     }
 }
