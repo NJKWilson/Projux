@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option csharp_namespace = "Projux.Backend.gRPC";
+option csharp_namespace = "Projux.UI.WPF.Proto";
 
 package customer_contact;
 

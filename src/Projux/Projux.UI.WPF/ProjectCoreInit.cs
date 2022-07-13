@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MudBlazor.Services;
+using Projux.UI.WPF.Data;
 
 namespace Projux.UI.Core
 {
@@ -9,6 +10,7 @@ namespace Projux.UI.Core
         {
             // Services
             serviceCollection.AddMudServices();
+            serviceCollection.AddSingleton<WeatherForecastService>();
         }
     }
 }

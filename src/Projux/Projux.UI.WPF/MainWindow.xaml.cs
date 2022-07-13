@@ -1,7 +1,9 @@
 ﻿using System.Windows;
+using Grpc.Net.Client;
 using Microsoft.Extensions.DependencyInjection;
 using Projux.UI.Core;
 using Projux.UI.WPF.Data;
+using Projux.UI.WPF.Pages;
 
 namespace Projux.UI.WPF
 {
@@ -17,7 +19,8 @@ namespace Projux.UI.WPF
             var serviceCollection = new ServiceCollection();
             serviceCollection.AddWpfBlazorWebView();
             serviceCollection.AddProjuxCore();
-            serviceCollection.AddSingleton<WeatherForecastService>();
+            
+
             Resources.Add("services", serviceCollection.BuildServiceProvider());
         }
     }
